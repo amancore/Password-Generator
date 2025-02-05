@@ -1,0 +1,288 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Global Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+	font-family: 'Poppins', sans-serif;
+	background: linear-gradient(135deg, #7F7FD5, #86A8E7, #91EAE4);
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+/* Main Container */
+.container {
+	background: #fff;
+	padding: 40px 30px;
+	border-radius: 15px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+	width: 90%;
+	max-width: 500px;
+	position: relative;
+	animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Decorative Graphics at Corners */
+/* Top Left Corner */
+.container::before {
+	content: "";
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	width: 80px;
+	height: 80px;
+	background: url('https://via.placeholder.com/80?text=TL') no-repeat center center/contain;
+	opacity: 0.8;
+}
+
+/* Bottom Right Corner */
+.container::after {
+	content: "";
+	position: absolute;
+	bottom: -20px;
+	right: -20px;
+	width: 80px;
+	height: 80px;
+	background: url('https://via.placeholder.com/80?text=BR') no-repeat center center/contain;
+	opacity: 0.8;
+}
+
+/* Heading */
+h1 {
+	text-align: center;
+	margin-bottom: 30px;
+	font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+	color: #333;
+}
+
+/* Display Container */
+.display-container {
+	display: flex;
+	align-items: center;
+	margin-bottom: 25px;
+}
+
+.data-display {
+	flex: 1;
+	padding: 12px 15px;
+	font-size: clamp(1rem, 2vw, 1.2rem);
+	border: 2px solid #ccc;
+	border-right: none;
+	border-radius: 10px 0 0 10px;
+	background: #f5f5f5;
+	transition: border-color 0.3s ease;
+}
+
+.data-display:focus {
+	outline: none;
+	border-color: #5563DE;
+}
+
+.copy-btn {
+	background: #5563DE;
+	border: none;
+	padding: 12px 15px;
+	border-radius: 0 10px 10px 0;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.copy-btn:hover {
+	transform: scale(1.05);
+	box-shadow: 0 4px 10px rgba(85, 99, 222, 0.5);
+}
+
+/* Cool ripple effect on click */
+.copy-btn:active::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 50%;
+	animation: ripple 0.6s linear;
+}
+
+/* Ripple Animation */
+@keyframes ripple {
+	from {
+		transform: scale(0);
+		opacity: 0.7;
+	}
+
+	to {
+		transform: scale(2.5);
+		opacity: 0;
+	}
+}
+
+/* Copy Button Image Styling */
+.copy-btn img {
+	filter: invert(100%);
+}
+
+/* Input Container */
+.input-container {
+	margin-bottom: 25px;
+}
+
+.length-container {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 12px;
+	color: #555;
+	font-weight: 500;
+	font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* Slider Styles */
+.slider-container input[type="range"] {
+	width: 100%;
+	-webkit-appearance: none;
+	height: 6px;
+	background: #ddd;
+	outline: none;
+	border-radius: 5px;
+	transition: background 0.3s ease;
+}
+
+.slider-container input[type="range"]:hover {
+	background: #ccc;
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	width: 24px;
+	height: 24px;
+	background: #5563DE;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: transform 0.2s ease;
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb:hover {
+	transform: scale(1.2);
+}
+
+/* Checkbox & Label */
+.input-container div {
+	margin-bottom: 12px;
+	font-size: clamp(0.9rem, 2vw, 1rem);
+	color: #555;
+}
+
+.input-container input[type="checkbox"] {
+	margin-right: 8px;
+	accent-color: #5563DE;
+}
+
+/* Strength Meter */
+.strength-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 20px 0;
+}
+
+.strength-container p {
+	font-size: clamp(0.9rem, 2vw, 1rem);
+	color: #555;
+	font-weight: 500;
+}
+
+.strength-container [data-indicator] {
+	width: 120px;
+	height: 12px;
+	background: #eee;
+	border-radius: 6px;
+	margin-left: 10px;
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Generate Button */
+button[data-generate] {
+	width: 100%;
+	padding: 15px;
+	background: #5563DE;
+	color: #fff;
+	font-size: clamp(1rem, 2vw, 1.1rem);
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button[data-generate]:hover {
+	background: #3e4bb8;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(85, 99, 222, 0.4);
+}
+
+/* Copy Message */
+[data-copyMsg] {
+	font-size: clamp(0.9rem, 2vw, 1rem);
+	color: #333;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	margin-right: 8px;
+}
+
+[data-copyMsg].active {
+	opacity: 1;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Media Queries for Extra Responsiveness */
+@media (max-width: 600px) {
+	.container {
+		padding: 30px 20px;
+	}
+
+	h1 {
+		margin-bottom: 20px;
+	}
+
+	.display-container {
+		flex-direction: column;
+	}
+
+	.data-display {
+		border-right: 2px solid #ccc;
+		border-radius: 10px;
+		margin-bottom: 10px;
+	}
+
+	.copy-btn {
+		border-radius: 10px;
+	}
+
+	.strength-container [data-indicator] {
+		width: 100px;
+	}
+}

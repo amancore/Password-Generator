@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Password-Generator</title>
+		<link rel="icon" type="image/png" href="./public/padlock.png">
+		<link  rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="container">
+			<h1 style="display: flex; align-items: center; gap: 7px; white-space: nowrap; margin-left: -10px;">
+				<img src="./public/padlock.png" alt="padlock" width="40" height="40">
+				Password Generator
+			</h1>
+
+			<div class="display-container">
+				<input readonly placeholder="Password" class="data-display">
+				<button class="copy-btn">
+					<span data-copyMsg></span>
+					<img src="/public/copy-link.png" width="23" height="23">
+				</button>
+			</div>
+
+			<div class="input-container">
+				<div class="length-container">
+					<p>Password Length</p>
+					<p data-length>0</p>
+				</div>
+				<!-- slider -->
+				<div class="slider-container">
+					<input type="range" min="1" max="20" class="slider" step="1" data-lenghtSlider>
+				</div>
+				<!--checkboxes  -->
+				<div>
+					<input type="checkbox" id="uppercase"> <label for="uppercase">Uppercase</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="lowercase"> <label for="lowercase">Lowercase</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="number"> <label for="number">Numbers</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="symbol"> <label for="symbol">Symbol</label><br>
+				</div>
+				<!-- strength meter -->
+				<div class="strength-container">
+					<p>Strength</p>
+					<div data-indicator></div>
+				</div>
+				<!-- generate password button -->
+				<button data-generate>Generate Password</button>
+			</div>
+			<script src="script.js"></script>
+		</body>
+</html>
