@@ -20,7 +20,7 @@ This tool allows users to generate **strong, customizable passwords** with optio
 
 ![Password Generator](./public/demo.png)  
 
-🔗 **Live Demo:** [Click Here](https://amancore.github.io/Password-Generator/) 
+➡️ **Live Demo:** <a href="https://amancore.github.io/Password-Generator/" target="_blank">Click Here</a>
 
 ---
 
